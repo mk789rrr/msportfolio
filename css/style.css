@@ -9,6 +9,9 @@ body{
     font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;
     line-height: 1.7;
     color: #666;
+    margin: 0; /* ブログ　*/
+    padding: 0; /* ブログ　*/
+    width: 100%; /* コーチ　*/
 }
 a {
     text-decoration: none;
@@ -17,130 +20,165 @@ img {
     max-width: 100%;
 }
 .wrapper {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 4%;
-    text-align: center;
+    max-width: 100%; /* コーチ　1100pxではなく100% */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* コーチ text-align:センターは消す */
 }
 
 
 /* HEADER
 --------------------------------- */
-
-h1 {
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    background: #FFBF1A;
+    width: 100%; /* 100vwを変更 */
+    height: 100px;
+    align-items: center; /* コーチ */
+    padding: 0 100px; /* コーチ 左右に100pxのパディングを追加、margin:auto;を変更 */
+    box-sizing: border-box; /* コーチ　パディングを含めてボックスサイズを計算 */
+}
+.page-header h1 {
+    margin: 0;
     font-family: "Bitter", sans-serif;
       font-weight: 400;
       font-style: normal;
-      margin-top: 20px;
     }
 
-    .main-nav {
-        display: flex;
+.page-header .main-nav {
+        display: flex; /* 横並びにする */
         font-size: 1.375rem;
-        text-transform: uppercase;
-        margin-top: 34px;
+        margin: 0; /* コーチ　*/
+        padding: 0; /* コーチ　*/
         list-style: none;
     }
-    .main-nav li {
-        margin-left: 36px;
-        font-family: "Bitter", sans-serif;
+    /* text-transform: uppercase; 
+       margin-top: 34px;
+        消した　*/
+
+.page-header .main-nav li {
+      margin-left: 36px; /* 各リンク間のスペースを調整　*/
+      font-family: "Bitter", sans-serif;
       font-weight: 400;
       font-style: normal;
     }
-    .main-nav a {
+.page-header .main-nav a {
         color: #fff;
+        text-decoration: none; /* コーチ　テキストの下線を削除 */
+
     }
-    .main-nav a:hover {
+.page-header .main-nav a:hover {
         color: #666;
     }
-    .page-header {
-        display: flex;
-        justify-content: space-between;
-        background: #FFBF1A;
-        width: 100%;
-        height: 100px;
-        margin: auto;
-    }
-    .wrapper {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 0 4%;
+    
         
-    }
+    
 
     /* HOME
     ----------------------------------- */
-    
-        
+    .home-content {
+        text-align: center; /* コーチ　*/
+    }
 
-    .home-content p {
-        margin-top: 50px;
+    .home-content .shell img {
+        width: auto; /* 自動調整 */
+        max-width: 100%; /* 最大幅を100%に設定 */
+        height: auto; /* 高さも自動調整 */
     }
     .page-title {
         font-size: 3.125rem;
-        text-align: center;
         margin-top: 180px;
         font-family: "Playfair Display", serif;
-        font-optical-sizing: auto;
-        font-weight: <weight>;
+        font-weight: 400;
         font-style: normal;
+        margin-bottom: 50px; /* タイトルと下のコンテンツのスペース　*/
     }
-    .flex {
+    /* ont-optical-sizing: auto;
+       text-align: center;
+     消した　*/
+
+     .flex {
         display: flex; /*横並び*/
-        justify-content: space-between;
-        margin-top: 50px;
-        margin-bottom: 80px; /* ボタン位置調整　*/
-        margin-left: 80px;
-        margin-right: 80px;
+        justify-content: center; /* space-between 消した,中央よせ */
+        flex-wrap: wrap; /* コーチ　レスポンシブ対応 */
+        gap: 20px; /* コーチ　要素間のスペースを調整 */
+        margin: 50px 0; /* コーチ　上下のマージン調整 */
       }
-     
-      .flex .text {
-        margin: 0 0 0 60px;
-        padding: 0;
-      
-      }
-      .text p {
-        display: table-cell;
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+        
+    .flex .text {
         margin: 0;
+        max-width: 600px; /* コーチ　最大幅を指定して中央寄せをサポート */
+      }
+
+    .frex .image {
+        margin: 0; /* コーチ */
+    }
+
+      .grid img {
+        width: 100%;
+        height: auto;
       }
       
+      .grid {
+        display: grid;
+        gap: 50px;
+        grid-template-columns: repeatrepeat(auto-fit, minmax(200px, 1fr)); /* コーチ　上下のマージン調整 */
+        margin: 50px 0; /* コーチ　上下のマージン調整 */
+    }
+
+    .grid img {
+        width: 100%;
+        height: auto;
+    }
 
 
     /* ボタン　*/
     .button {
+        display: inline-block; /* コーチ　ボタンを中央寄せにする */
         font-size: 1rem;
         font-family: "Playfair Display", serif;
-        font-optical-sizing: auto;
-        font-weight: <weight>;
+        font-weight: 400;
         font-style: normal; /* ここまでフォントのこと　*/
         background: #FFBF1A;
         color: #fff;
         border-radius: 5px;
-        padding: 10.4px 50.7px;
         border-radius: 100vh;
+        padding: 10.4px 50.7px;
         text-align: center;
+        margin: 20px o; /* コーチ　ボタンの上下のマージン調整 */
     }
     .botton :hover {
         background: #666; 
     }
+
     /* 写真　*/
     .grid {
         display: grid;
         gap: 50px;
         grid-template-columns: repeat(3,1fr);
         margin-top: 50px;
-        margin-bottom: 80px; /* ボタン位置調整 */
+        margin-bottom: 80px;
     }
     .image img {
         width: 384px;
     }
+
     .shell img {
-        width: 1058px;
+        width: 100%;
+        height: auto;
     }
+    
+    
     /* CONTACT 
     -------------------------------------------*/
     #contact {
-        background-image: url(https://github.com/mk789rrr/msportfolio/blob/main/beach.jpeg?raw=true);
+        background-image: url(../images/beach.jpeg);
         min-height: 100vh;
         background-size: cover;
     }
@@ -201,24 +239,12 @@ h1 {
         textarea {
             max-width: 100%;
         }
+        /* 画像　*/
+        .shell img {
+            width: 100%;
+            height: auto;
+        }
 
-    }
-    /* FOOTER 
-    ------------------------------ */
-    footer {
-        background: #FFBF1A;
-        text-align: center;
-        padding: 26px 0 0;
-    }
-    footer h3 {
-        color: #666;
-        font-size: 1.625rem;
-        text-align: left;
-        font-family: "Bitter", sans-serif;
-    }
-    footer p {
-        color: #666;
-        font-size: 0.75rem;
     }
 
     /* ABOUT
@@ -226,6 +252,7 @@ h1 {
 
     body {
         background-color: #FEFBE7;
+        min-width: 1020px;
     }
 
     .image2 {
@@ -240,7 +267,7 @@ h1 {
         text-align: left;
         font-family: "Playfair Display", serif;
         font-optical-sizing: auto;
-        font-weight: <weight>;
+        font-weight: 400;
         font-style: normal;
         margin-top: 120px;
         margin-bottom: 30px
@@ -256,6 +283,25 @@ h1 {
         text-align: left;
         margin-left: 100px;
      }
-     
+    /* FOOTER 
+    ------------------------------ */
+    footer {
+        background: #FFBF1A;
+        text-align: center;
+        padding: 26px 0;
+    }
+    footer h3 {
+        color: #666;
+        font-size: 1.625rem;
+        text-align: left;
+        font-family: "Bitter", sans-serif;
+        margin: 0; /* コーチ　*/
+    }
+    footer p {
+        color: #666;
+        font-size: 0.75rem;
+        margin: 0; /* コーチ　*/
+    }
 
-  
+    
+     
