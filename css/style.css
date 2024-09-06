@@ -289,6 +289,15 @@ img {
         background: #FFBF1A;
         text-align: center;
         padding: 26px 0;
+        
+    
+    }
+    footer .wrapper { /* コーチ */
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0,100px;
+        text-align: center;
+        height: 85px;
     }
     footer h3 {
         color: #666;
@@ -305,3 +314,5 @@ img {
 
     
      
+
+  
