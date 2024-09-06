@@ -178,7 +178,7 @@ img {
     /* CONTACT 
     -------------------------------------------*/
     #contact {
-        background-image: url("https://github.com/mk789rrr/msportfolio/blob/main/beach.jpeg?raw=true");
+        background-image: url(../images/beach.jpeg);
         min-height: 100vh;
         background-size: cover;
     }
@@ -244,12 +244,12 @@ img {
             width: 100%;
             height: auto;
         }
-
-   #contact img {
+        #contact {
             background-size: cover;
-            width: 390px;
-       height:844px;
-  
+            width: 100%;
+            height: 400px;
+
+        ]
 
     }
 
